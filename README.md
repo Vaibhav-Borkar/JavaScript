@@ -37,4 +37,4 @@ Follow these steps to install the project locally:
 
 1. Clone the repository:
    ```bash
-   git clone 
+   git clone https://github.com/Vaibhav-Borkar/JavaScript.git
