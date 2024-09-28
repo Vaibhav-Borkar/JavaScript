@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const div = document.createElement("div");
+      div.className = "newDiv";
+      div.id = "main";
+      div.setAttribute("title", "Generated Title");
+      div.style.backgroundColor = "red";
+      const add = document.createTextNode("My Div Main");
+      div.appendChild(add);
+      document.body.appendChild(div);
+      const createH1 = () => {
+        const item = document.createElement("h1");
+        item.className = "headClass";
+        item.id = "headId";
+        item.style.color = "red";
+        item.style.backgroundColor = "blue";
+        const newItem = document.createTextNode("Hey i am h1");
+        item.appendChild(newItem);
+        document.body.appendChild(item);
+      };
+      createH1();
+      createH1();
+      createH1();
+      createH1();
+      createH1();
+      createH1();
+      createH1();
+    </script>
+  </body>
+</html>

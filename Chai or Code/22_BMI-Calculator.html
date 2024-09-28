@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .main {
+        height: 500px;
+        width: 500px;
+        border: 3px solid black;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>BMI Calculator</h1>
+      <br />
+
+      <form id="bmiForm">
+        Height in CM:<input type="number" id="height" required /> <br />
+        Weight in KG:<input type="number" id="weight" required />
+        <br />
+        <button id="btn" type="submit">Submit</button>
+      </form>
+      <div class="result"></div>
+    </div>
+
+    <!-- Js here -->
+    <script>
+      const submit = document.getElementById("bmiForm");
+      submit.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const height = document.getElementById("height").value;
+        const weight = document.getElementById("weight").value;
+        // Convert height from cm to meters
+        const heightM = height / 100;
+
+        // Calculate BMI
+        const bmi = weight / (heightM * heightM);
+
+        const resultDiv = document.querySelector(".result");
+        resultDiv.innerHTML = `Your BMI is ${bmi.toFixed(2)}`;
+      });
+    </script>
+  </body>
+</html>

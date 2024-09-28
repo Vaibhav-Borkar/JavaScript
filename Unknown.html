@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print Form Values on Same Page</title>
+  </head>
+  <body>
+    <div class="container" id="main">
+      <form id="myForm">
+        Name: <input type="text" id="name" required /> <br />
+        Surname: <input type="text" id="surname" required /> <br />
+        Email: <input type="email" id="email" required /><br />
+        <button type="submit" id="btn">Click Me</button>
+      </form>
+      <!-- Placeholder to display the submitted values -->
+      <div id="output"></div>
+    </div>
+
+    <script>
+      // Function to handle form submission
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          // Prevent the form from refreshing the page
+          event.preventDefault();
+
+          // Get values from the form
+          const name = document.getElementById("name").value;
+          const surname = document.getElementById("surname").value;
+          const email = document.getElementById("email").value;
+
+          // Create a string to display the values
+          const output = `
+                <h3>Submitted Values:</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Surname:</strong> ${surname}</p>
+                <p><strong>Email:</strong> ${email}</p>
+            `;
+
+          // Display the values on the same page
+          document.getElementById("output").innerHTML = output;
+        });
+    </script>
+  </body>
+</html>

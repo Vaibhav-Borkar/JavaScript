@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SetInterval</title>
+    <style>
+      .content {
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .btn {
+        text-align: center;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn">
+      <div class="content"></div>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+
+    <script>
+      let content = document.querySelector(".content");
+      const start = document.getElementById("start");
+      const stop = document.getElementById("stop");
+      let interval; // Declare the interval variable outside the functions
+
+      const intervalFunction = () => {
+        const date = new Date();
+        content.innerHTML = date.getSeconds();
+      };
+
+      start.addEventListener("click", () => {
+        if (!interval) {
+          interval = setInterval(intervalFunction, 1000); // Start interval
+        }
+      });
+
+      stop.addEventListener("click", () => {
+        clearInterval(interval); // Clear interval
+        interval = null; // Reset the interval variable so it can be started again
+      });
+    </script>
+  </body>
+</html>

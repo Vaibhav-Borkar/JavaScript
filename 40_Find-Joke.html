@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" id="question"></div>
+    <div class="container" id="answer"></div>
+
+    <div class="container" id="main">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita
+      quisquam quis, velit dolorum explicabo pariatur maxime. Quam voluptatem
+      nihil pariatur debitis deserunt consectetur suscipit ipsam nesciunt sequi
+      quis corporis quod dignissimos repellendus sint similique, labore sapiente
+      ex aut? Itaque, laborum natus? Placeat at necessitatibus nemo libero
+      reprehenderit, aliquam amet sunt explicabo odio delectus cumque odit enim
+      sequi blanditiis! Voluptatibus debitis nobis eius doloribus voluptatem
+      placeat sint voluptatum voluptate quasi aliquid atque minima, obcaecati
+      vel voluptas. Dolorem ex alias est neque nobis quod iusto perferendis quos
+      repellat eaque, sit accusantium illum pariatur vel vitae error eum fugit
+      laboriosam. Sequi, laudantium ea voluptates vero, quaerat nobis sunt
+      sapiente et incidunt quasi cum laborum temporibus eius tenetur amet natus
+      sit obcaecati nam? Sed in nisi fugit omnis exercitationem necessitatibus.
+      Assumenda nam beatae, eius, officiis quo provident, placeat amet tenetur
+      iste libero accusamus? Rem animi libero aliquam obcaecati tempore nihil
+      vero facilis fuga numquam qui labore quae magni harum exercitationem
+      molestiae nisi, nemo enim excepturi, recusandae cupiditate, nobis ullam
+      ratione? Velit magnam nesciunt accusantium amet omnis nemo eos illo
+      dolorem! Repudiandae, eaque enim officia totam neque illo dolore rem
+      asperiores autem. Amet tempore animi non maxime, culpa, consequatur
+      temporibus, excepturi delectus minima iste sapiente!
+    </div>
+    <script>
+      const jokes = [
+        // Dad Jokes
+        {
+          question: "What do you call a fake dad?",
+          answer: "A faux pas.",
+        },
+        {
+          question: "Why do dogs float in water?",
+          answer: "Because they’re good buoys.",
+        },
+        {
+          question: "What should you do if your puppy isn’t feeling well?",
+          answer: "Take him to the dog-tor.",
+        },
+        {
+          question: "Why couldn’t the lifeguard rescue the hippie?",
+          answer: "Because he was too far out, man.",
+        },
+        {
+          question: "Where do penguins go to vote?",
+          answer: "The North Poll.",
+        },
+        {
+          question: "What do you call a girl with no eyes?",
+          answer: "A grl.",
+        },
+        {
+          question: "Where do birds stay when they travel?",
+          answer: "Someplace cheep.",
+        },
+        {
+          question:
+            "Why should you knock on your refrigerator door before opening it?",
+          answer: "There may be salad dressing in there.",
+        },
+        {
+          question: "Did you hear about the worst zoo in the world?",
+          answer: "It only has one dog. It’s a real shih tzu.",
+        },
+        {
+          question: "What did one toilet say to the other?",
+          answer: "You appear a bit flushed.",
+        },
+        {
+          question: "Why are most people tired on April 1?",
+          answer: "They’ve just finished a 31-day March.",
+        },
+        {
+          question: "How do you make a tissue dance?",
+          answer: "Put a little boogie in it.",
+        },
+        {
+          question: "Why aren’t lobsters generous?",
+          answer: "Because they’re shellfish.",
+        },
+        {
+          question: "Why did Mozart kill all of his chickens?",
+          answer:
+            "When he asked who the best composer was, they all replied, 'Bach, Bach, Bach.'",
+        },
+        {
+          question: "Why did the rabbit go to the salon?",
+          answer: "It was having a bad hare day.",
+        },
+        {
+          question: "Why can’t leopards play hide-and-seek?",
+          answer: "Because they’re always spotted.",
+        },
+        {
+          question: "How do you light up a sports stadium?",
+          answer: "With a soccer match.",
+        },
+        {
+          question: "Where do sheep love to vacation?",
+          answer: "The Baa-hamas.",
+        },
+        {
+          question:
+            "Why do historians call the Early Middle Ages the Dark Ages?",
+          answer: "There were a lot of knights.",
+        },
+        {
+          question: "Why did the employee go work on stilts?",
+          answer: "He wanted a raise.",
+        },
+        {
+          question: "What did one plate say to the other?",
+          answer: "Lunch is on me!",
+        },
+        {
+          question: "Why do comedians love telling jokes to ducks?",
+          answer: "They always quack up.",
+        },
+        {
+          question: "How did the piano get locked out of its car?",
+          answer: "It lost its keys.",
+        },
+        {
+          question: "What do you call a nose without a body?",
+          answer: "No body nose.",
+        },
+        {
+          question: "How do you make an egg roll?",
+          answer: "You push it.",
+        },
+        {
+          question: "Did you hear about the fire at the shoe factory?",
+          answer: "Unfortunately, many soles were lost.",
+        },
+        {
+          question: "What kind of fish knows how to do an appendectomy?",
+          answer: "A sturgeon.",
+        },
+        {
+          question: "How do you hire a horse?",
+          answer: "Stand it on a ladder.",
+        },
+        {
+          question:
+            "What did the fish say when he ran into a wall in the river?",
+          answer: "Dam!",
+        },
+        {
+          question: "Why do giraffes have long necks?",
+          answer: "Because they have stinky feet.",
+        },
+        {
+          question: "Why did the pony ask for a glass of water?",
+          answer: "Because it was a little horse.",
+        },
+        {
+          question:
+            "Is there anything worse than when it’s raining cats and dogs?",
+          answer: "Yes, hailing taxis.",
+        },
+        {
+          question: "What do you call two doctors?",
+          answer: "Pair-a-medics.",
+        },
+        {
+          question: "What did 0 say to 8?",
+          answer: "Nice belt.",
+        },
+      ];
+
+      let que = document.getElementById("question");
+      let ans = document.getElementById("answer");
+      que.innerHTML = "Question:---->" + jokes[0].question;
+      ans.innerHTML = "Answer:------> " + jokes[0].answer;
+      console.log(jokes[0]);
+      let i = document.getElementById("main");
+      i.style.color = "red";
+      i.style.fontSize = "22px";
+
+      i.style.overflow = "hidden";
+    </script>
+  </body>
+</html>

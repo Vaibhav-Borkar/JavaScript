@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .list {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="list">
+      <li>FIRST</li>
+    </ul>
+
+    <script>
+      // Add element in ul using dom
+      const addLi = (language) => {
+        const li = document.createElement("li");
+        li.innerHTML = `${language}`;
+        document.querySelector(".list").appendChild(li);
+      };
+      addLi("SECOND");
+
+      // OPTIMISED WAY...
+      const addLiOptimised = (language) => {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(language));
+        document.querySelector(".list").appendChild(li);
+      };
+      addLiOptimised("THIRD");
+
+      // UPDATING THE ITEMS
+      const updateLi = (language) => {
+        const li = document.querySelector("li:nth-child(2)");
+        // li.innerHTML = `${language}`;
+        const newLi = document.createElement("li");
+        newLi.textContent = "@Updated";
+        li.replaceWith(newLi);
+      };
+      updateLi("Second Updated");
+
+      // DELETE THE ITEMS
+      const deleteLi = (index) => {
+        const li = document.querySelector(`li:nth-child(${index})`);
+        li.remove();
+      };
+      deleteLi(3);
+    </script>
+  </body>
+</html>

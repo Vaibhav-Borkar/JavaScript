@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" id="main">
+      <div class="sub" id="inner">Insertion Attributes of HTML</div>
+    </div>
+
+    <script>
+      //setting html in element
+      let set = document.getElementsByTagName("div")[0];
+      set.innerHTML = set.innerHTML + "<p>New Html</p>";
+
+      // creating div
+      let div = document.createElement("div");
+      div.innerHTML = "<p>Created Div</p>";
+      set.append(div);
+      set.prepend(div);
+      set.after(div);
+      set.before(div);
+
+      set.replaceWith(div);
+
+      console.log(document.body.outerHTML);
+    </script>
+  </body>
+</html>

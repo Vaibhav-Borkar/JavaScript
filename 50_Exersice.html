@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: aqua;
+        border: 4px solid red;
+        height: 100%;
+        width: 100%;
+      }
+      p {
+        background-color: rgb(235, 205, 34);
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 4px;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn1" onclick="arrayList()">Listwew</button>
+    <button id="btn2" onclick="single()">Single</button>
+    <div class="container" id="main"></div>
+    <script>
+      const arr = [
+        {
+          category: "Programming",
+          type: "twopart",
+          setup: "What is a dying programmer's last program?",
+          delivery: "Goodbye, world!",
+          flags: {
+            nsfw: false,
+            religious: false,
+            political: false,
+            racist: false,
+            sexist: false,
+            explicit: false,
+          },
+          id: 56,
+          safe: true,
+          lang: "en",
+        },
+        {
+          category: "Misc",
+          type: "twopart",
+          setup: "My wife left me because I'm too insecure and paranoid.",
+          delivery: "Oh wait, never mind. She was just getting the mail.",
+          flags: {
+            nsfw: false,
+            religious: false,
+            political: false,
+            racist: false,
+            sexist: false,
+            explicit: false,
+          },
+          id: 81,
+          safe: true,
+          lang: "en",
+        },
+        {
+          category: "Christmas",
+          type: "twopart",
+          setup: "What do elves post on Social Media?",
+          delivery: "Elf-ies!",
+          flags: {
+            nsfw: false,
+            religious: false,
+            political: false,
+            racist: false,
+            sexist: false,
+            explicit: false,
+          },
+          id: 249,
+          safe: true,
+          lang: "en",
+        },
+        {
+          category: "Misc",
+          type: "twopart",
+          setup: "I like my girls how I like my COVID.",
+          delivery: "19 and easily spread.",
+          flags: {
+            nsfw: true,
+            religious: false,
+            political: false,
+            racist: false,
+            sexist: false,
+            explicit: true,
+          },
+          id: 167,
+          safe: false,
+          lang: "en",
+        },
+        {
+          category: "Programming",
+          type: "twopart",
+          setup: "why do python programmers wear glasses?",
+          delivery: "Because they can't C.",
+          flags: {
+            nsfw: false,
+            religious: false,
+            political: false,
+            racist: false,
+            sexist: false,
+            explicit: false,
+          },
+          safe: true,
+          id: 294,
+          lang: "en",
+        },
+        {
+          category: "Dark",
+          type: "single",
+          joke: "I don't know where I stand on abortion. I like killing babies, but I don't like giving women a choice.",
+          flags: {
+            nsfw: true,
+            religious: false,
+            political: false,
+            racist: false,
+            sexist: true,
+            explicit: true,
+          },
+          id: 228,
+          safe: false,
+          lang: "en",
+        },
+        {
+          category: "Misc",
+          type: "single",
+          joke: "Yo mama is so old, she knew Burger King while he was still a prince.",
+          flags: {
+            nsfw: false,
+            religious: false,
+            political: false,
+            racist: false,
+            sexist: false,
+            explicit: false,
+          },
+          safe: true,
+          id: 306,
+          lang: "en",
+        },
+        {
+          category: "Christmas",
+          type: "twopart",
+          setup: "What does Santa suffer from if he gets stuck in a chimney?",
+          delivery: "Claustrophobia!",
+          flags: {
+            nsfw: false,
+            religious: false,
+            political: false,
+            racist: false,
+            sexist: false,
+            explicit: false,
+          },
+          id: 241,
+          safe: true,
+          lang: "en",
+        },
+        {
+          category: "Programming",
+          type: "twopart",
+          setup:
+            "What do you get if you lock a monkey in a room with a typewriter for 8 hours?",
+          delivery: "A regular expression.",
+          flags: {
+            nsfw: false,
+            religious: false,
+            political: false,
+            racist: false,
+            sexist: false,
+            explicit: false,
+          },
+          id: 26,
+          safe: true,
+          lang: "en",
+        },
+        {
+          category: "Dark",
+          type: "twopart",
+          setup: "What do you call a kid with no arms and an eyepatch?",
+          delivery: "Names.",
+          flags: {
+            nsfw: false,
+            religious: false,
+            political: false,
+            racist: false,
+            sexist: false,
+            explicit: false,
+          },
+          id: 119,
+          safe: false,
+          lang: "en",
+        },
+      ];
+
+      function arrayList() {
+        let mainDiv = document.getElementById("main");
+        for (i = 0; i < arr.length; i++) {
+          if (arr[i].type === "single") {
+            mainDiv.innerHTML += `<p>${i + 1 + " ] " + arr[i].joke}</p>`;
+          } else {
+            mainDiv.innerHTML += `<p>${i + 1 + " ] "} ${arr[i].setup} <br>  ${
+              arr[i].delivery
+            }</p>`;
+          }
+          console.log("list");
+        }
+      }
+      function single() {
+        let mainDiv = document.getElementById("main");
+        let num = 3;
+        if (num < arr.length && arr[num].type !== "single") {
+          mainDiv.innerHTML += `<p> ${arr[num].setup} <br>  ${arr[num].delivery}</p>`;
+        } else {
+          mainDiv.innerHTML += `<p> ${arr[num].joke} </p>`;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .bulb {
+        height: 300px;
+        width: 300px;
+        background-color: yellow;
+        margin-top: 50px;
+      }
+      .bulbcontainer {
+        height: 300px;
+        width: 300px;
+        /* background-color: yellow; */
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn1" onclick="handleclick()">Button1</button>
+    <button id="btn2" onclick="handleclick()">Button2</button>
+    <button id="btn3" onclick="handleclick()">Button3</button>
+    <h1>Bookmarks</h1>
+    <!-- <a href="https://youtube.com"><button>Youtube</button></a> -->
+    <button id="youtube">Youtube</button>
+    <a href="https://google.com" target="_blank"><button>Google</button></a>
+    <a href="https://facebook.com"><button>Facebook</button></a>
+
+    <div id="bulb" class="bulbcontainer bulb"></div>
+  </body>
+  <script>
+    function handleclick() {
+      alert("button clicked");
+      console.log("btn1");
+    }
+
+    document.getElementById("youtube").addEventListener("click", () => {
+      const url = "https://youtube.com";
+      window.open(url);
+    });
+
+    const fetchData = async (url) => {
+      con = await fetch(url);
+      let a = await con.json();
+      return a;
+    };
+
+    setInterval(async function () {
+      let url = "https://jsonplaceholder.typicode.com/todos/1";
+      console.log(await fetchData(url));
+    }, 20);
+
+    //bulb
+    // setInterval(async function () {
+    //   document.querySelector("#bulb").classList.toggle("bulb");
+    // }, 50);
+    setInterval(() => {
+      document.querySelector("#bulb").classList.toggle("bulb");
+    }, 80);
+  </script>
+</html>

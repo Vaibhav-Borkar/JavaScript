@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image in List Item</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+      }
+
+      ul {
+        list-style-type: none; /* Removes default bullet points */
+        padding: 0;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+        cursor: pointer; /* Adds a pointer cursor to indicate it's clickable */
+      }
+
+      .text-content {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="main">
+      <li data-id="1">
+        <img src="https://via.placeholder.com/50" alt="Image 1" />
+        <div class="text-content">Item 1: Click image to remove</div>
+      </li>
+      <li data-id="2">
+        <img src="https://via.placeholder.com/50" alt="Image 2" />
+        <div class="text-content">Item 2: Click image to remove</div>
+      </li>
+      <li data-id="3">
+        <img src="https://via.placeholder.com/50" alt="Image 3" />
+        <div class="text-content">Item 3: Click image to remove</div>
+      </li>
+    </ul>
+
+    <script>
+      const images = document.querySelector("#main");
+
+      //   // Load deleted items from LocalStorage
+      //   const deletedItems =
+      //     JSON.parse(localStorage.getItem("deletedItems")) || [];
+
+      //   // Remove any items from the DOM that were deleted previously
+      //   deletedItems.forEach((id) => {
+      //     const item = document.querySelector(`li[data-id="${id}"]`);
+      //     if (item) item.remove();
+      //   });
+
+      images.addEventListener("click", (e) => {
+        // Check if the clicked target is an image
+        if (e.target.tagName === "IMG") {
+          const listItem = e.target.parentElement;
+          const id = listItem.getAttribute("data-id");
+
+          // Save deleted items in LocalStorage
+          //   deletedItems.push(id);
+          //   localStorage.setItem("deletedItems", JSON.stringify(deletedItems));
+
+          // Remove the list item from the DOM
+          listItem.remove();
+        }
+      });
+    </script>
+  </body>
+</html>

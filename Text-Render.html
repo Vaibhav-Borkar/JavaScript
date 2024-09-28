@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Content on Button Click</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .content-div {
+        padding: 20px;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        text-align: center;
+        width: 60%;
+        color: rgb(255, 0, 0);
+        background-color: rgb(206, 219, 21);
+        font-size: 200px;
+        text-decoration-color: aqua;
+        border-radius: 30px;
+        border: 4px solid blueviolet;
+
+        font-family: "Bangers", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .center-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .bangers-regular {
+        font-family: "Bangers", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Div to display content -->
+    <div id="content" class="content-div">Oye!</div>
+    <!-- Button to change content -->
+    <button class="center-button" onclick="changeContent()">Click Me</button>
+
+    <script>
+      // Function to change the content of the div
+      function changeContent() {
+        document.getElementById("content").innerText = "Vaibhav..!";
+      }
+    </script>
+  </body>
+</html>

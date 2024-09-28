@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="btn">
+      <div class="content"></div>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+
+    <script>
+      let content = document.querySelector(".content");
+      const start = document.getElementById("start");
+      start.addEventListener("click", () => {
+        const times = setTimeout(() => {
+          content.innerHTML = "Button Clicked !";
+        }, 1000);
+      });
+      clearTimeout(times);
+    </script>
+  </body>
+</html>

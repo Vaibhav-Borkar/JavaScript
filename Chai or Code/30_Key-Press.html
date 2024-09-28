@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main"></div>
+
+    <script>
+      let content = document.getElementById("main");
+      const body = document.body;
+      const keyArr = [];
+      body.addEventListener("keypress", (e) => {
+        console.log(e.key);
+        keyArr.push(e.key);
+        content.innerHTML = keyArr;
+      });
+    </script>
+  </body>
+</html>

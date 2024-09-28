@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" id="main">I am Main Container</div>
+  </body>
+
+  <script>
+    //Adjacent Element
+    let mainContainer = document.getElementById("main");
+
+    let newDiv = document.createElement("div");
+    newDiv.textContent = "I am new Div";
+    newDiv.className = "test";
+    mainContainer.insertAdjacentElement("beforebegin", newDiv);
+    mainContainer.insertAdjacentElement("beforeend", newDiv);
+    mainContainer.insertAdjacentElement("afterbegin", newDiv);
+    mainContainer.insertAdjacentElement("afterend", newDiv);
+
+    newDiv.remove();
+  </script>
+</html>

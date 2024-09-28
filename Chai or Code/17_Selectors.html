@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="upper">
+      Upper Div
+      <div class="container" id="main">
+        <div class="item" id="div1">Sunday</div>
+        <div class="item" id="div2">Monday</div>
+        <div class="item" id="div3">Tuesday</div>
+        <div class="item" id="div4">Wednesday</div>
+        <div class="item" id="div5">Thrusday</div>
+      </div>
+      <h1>Next Element</h1>
+    </div>
+    <script>
+      const ele = document.querySelector(".container");
+      console.log(ele);
+      const first = ele.firstChild;
+      console.log(first);
+      const elementse = document.getElementsByClassName("item");
+      console.log(elementse[0]);
+      let mes = (elementse[0].style.backgroundColor = "red");
+      console.log(mes);
+      const con = document.getElementsByClassName("container");
+      const leng = con[0].children.length;
+      for (let i = 0; i < leng - 1; i++) {
+        console.log(con[0].children[i].textContent);
+      }
+
+      let day = document.querySelector(".item");
+      console.log(day);
+      console.log(day.nextSibling);
+      console.log(day.nextElementSibling);
+      console.log(day.parentElement);
+      console.log(day.parentNode);
+    </script>
+  </body>
+</html>

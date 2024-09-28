@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // setTimeOut is function if we want to delay a activity for certain time then we should go for setTimeout() it takes a function and time delay and argument of this function as a parameter...we use it if we delay a activity only once..
+      const ids = setTimeout(
+        function run(a, b) {
+          alert(a + b + "  hiii");
+        },
+        3000,
+        12,
+        2
+      );
+      clearTimeout(ids);
+
+      // If we want to repeat a task in certain time period then we go for setInterval function we use  this function if we want to repeat the same task multiple times..
+      let add = (a, b) => {
+        a + b;
+        console.log(a + b);
+        alert(a + b);
+      };
+
+      let id = setInterval(add, 2000, 122, 8);
+      document.write(id);
+      clearInterval(id);
+
+      let count = 0;
+      for (let i = 0; i < 10; i++) {
+        document.write(i + "<br>");
+        let id = setInterval(add, 2000, 122, 8);
+        count++;
+        if (count == 5) {
+          //clearInterval(id);
+          document.write("BREAKED....");
+        }
+      }
+    </script>
+  </body>
+</html>

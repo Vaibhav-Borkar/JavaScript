@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main" id="id1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+      explicabo harum veniam.
+    </div>
+
+    <div class="main" id="id2">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam modi
+      repellat nihil voluptatibus praesentium, deserunt atque suscipit unde
+      doloribus repudiandae distinctio?
+    </div>
+
+    <div class="con" id="id3">
+      <button id="btn1" onclick="run()">Click me</button>
+    </div>
+    <script>
+      let doc = (document.getElementById("id1").innerHTML = "<h1>Hiiiiii</h1>");
+
+      // writing a function
+      function run() {
+        let all = document.body.outerHTML;
+        document.getElementById("id3").innerHTML = all;
+        close();
+        document.body.style.backgroundColor = "red";
+        document.getElementById("btn1").style.backgroundColor = "black";
+      }
+    </script>
+  </body>
+</html>

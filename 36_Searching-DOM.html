@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centered Colored Divs with Buttons</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border: 7px solid red;
+        padding: 20px;
+        background-color: red;
+      }
+      .box-container,
+      .button-container {
+        display: flex;
+        gap: 20px;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+      .red {
+        background-color: red;
+      }
+      .green {
+        background-color: green;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .button {
+        width: 100px;
+        height: 50px;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .red-button {
+        background-color: red;
+      }
+      .green-button {
+        background-color: green;
+      }
+      .blue-button {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box-container">
+        <div id="redd" class="box red"></div>
+        <div id="greenn" class="box green"></div>
+        <div id="bluee" class="box blue"></div>
+      </div>
+      <div class="button-container">
+        <button class="button red-button">Red Button</button>
+        <button class="button green-button">Green Button</button>
+        <button class="button blue-button">Blue Button</button>
+      </div>
+    </div>
+
+    <script>
+      //let reds = (document.getElementById(red).style.backgroundColor = "black");
+      //reds = style.color = "black";
+
+      // let change = document.getElementById("redd");
+      // change.style.backgroundColor = "black";
+
+      let set = document.querySelectorAll(".button");
+      set[0].style.backgroundColor = "red";
+      set[1].style.backgroundColor = "blue";
+      set[2].style.backgroundColor = "blue";
+
+      let seter = document.querySelectorAll(".box");
+      seter[0].style.backgroundColor = "blue";
+      seter[1].style.backgroundColor = "blue";
+      seter[2].style.backgroundColor = "blue";
+    </script>
+  </body>
+</html>

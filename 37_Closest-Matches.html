@@ -1,0 +1,45 @@
+// Closest matches and contains tutorials
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="con">
+      Hii i am div
+
+      <p class="cons" id="first">first id value</p>
+      <p id="second">second id value</p>
+    </div>
+    <div class="main">Hii am main</div>
+
+    <script>
+      let ans = document.getElementById("first");
+      console.log(ans);
+      console.log(ans);
+      for (let i = 0; i < 10; i++) {
+        // console.log(ans);
+      }
+
+      // Check the parent class of element.....
+      console.log(ans.matches(".cons"));
+
+      // return closest
+      console.log(ans.closest(".con"));
+
+      //
+      let ansd = document.getElementsByClassName("con"); // Remove the dot (.) before 'con'
+      console.log(ansd);
+
+      // To check if any of the elements in the collection have the class 'first'
+      for (let i = 0; i < ansd.length; i++) {
+        if (ansd[i].classList.contains("first")) {
+          console.log("Element contains the class 'first'");
+        }
+      }
+    </script>
+  </body>
+</html>

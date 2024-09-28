@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .nav {
+        background-color: rgb(10, 248, 10);
+        display: flex;
+      }
+      .navbar {
+        display: flex;
+      }
+      .list {
+        list-style: none;
+        padding-right: 24px;
+        color: brown;
+        padding: 10px;
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <nav class="navbar">
+        <li class="list" id="id1">Home</li>
+        <li class="list" id="id2">About</li>
+        <li class="list" id="id3">Contect</li>
+      </nav>
+    </div>
+
+    <script>
+      let vars = document.getElementById("id1");
+      vars.style.color = "red";
+
+      let car = document.getElementById("id2");
+      car.style.color = "black";
+
+      let va = document.getElementById("id3");
+      va.style.color = "blue";
+      blue;
+      // If we comment the above code then only it runs...........
+      Array.from(document.getElementsByTagName("li")).forEach((element) => {
+        element.style.background = "red";
+      });
+    </script>
+  </body>
+</html>

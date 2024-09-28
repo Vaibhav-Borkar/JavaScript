@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main" id="id1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, asperiores.
+      Commodi dolorem, quidem placeat culpa a minima explicabo facere harum.
+    </div>
+    <div class="main" id="id2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, autem.
+    </div>
+
+    <div
+      class="main"
+      id="custom"
+      data-game="mario"
+      data-name="vaibhav"
+      custom="customAttr"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, sequi.
+    </div>
+    <script>
+      // Give the name of class attribute presented inside perticular id
+      let value = document.getElementById("id1");
+      let vard = value.getAttribute("class");
+      console.log(vard);
+
+      // Give the name of class attribute presented inside perticular id
+      let check = document.getElementById("id2");
+      let check2 = check.hasAttribute("class");
+      console.log(check2);
+
+      // Removing attribute of a pericular element
+      let remove = document.getElementById("id2").removeAttribute("class");
+      console.log(remove);
+      // when we see the outer html perticular class attribute will be removed...
+      console.log(document.body.outerHTML);
+
+      // Printing all attribute present inside a element..
+      // give the list of all attributes present inside pericular element..
+      let print = document.getElementById("id1").attributes;
+      console.log(print);
+
+      // Custom attributes..
+      //dataset doesnt recognize this attributes which not prefixed with data like custom attribute in custom id div..
+      let attr = document.getElementById("custom").dataset;
+      console.log(attr);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number Game</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .main {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      label {
+        font-size: 18px;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .result,
+      .previous,
+      .remaining {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #333;
+      }
+
+      .restart-btn {
+        background-color: #28a745;
+        margin-top: 20px;
+      }
+
+      .restart-btn:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Guess the Number</h1>
+      <form class="submit">
+        <label for="guess">Guess the number (1-100):</label>
+        <input
+          type="number"
+          id="guess"
+          name="guess"
+          min="1"
+          max="100"
+          placeholder="Enter Number Form 1 To 100 !"
+          required
+        />
+        <button type="submit">Guess</button>
+      </form>
+      <div class="result"></div>
+      <div class="previous"></div>
+      <div class="remaining"></div>
+    </div>
+
+    <script>
+      const randomNum = Math.floor(Math.random() * 100) + 1;
+      const form = document.querySelector(".submit");
+      const previous = document.querySelector(".previous");
+      const remaining = document.querySelector(".remaining");
+      const userNum = document.getElementById("guess");
+      const result = document.querySelector(".result");
+
+      let previousGuesses = [];
+      let attemptsLeft = 10;
+      let playGame = true;
+
+      console.log(`Random Number (for testing): ${randomNum}`);
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (playGame) {
+          const guess = parseInt(userNum.value);
+          if (guess >= 1 && guess <= 100) {
+            processGuess(guess);
+          } else {
+            alert("Please enter a number between 1 and 100.");
+          }
+        }
+      });
+
+      const processGuess = (guess) => {
+        previousGuesses.push(guess);
+        attemptsLeft--;
+
+        if (guess === randomNum) {
+          result.innerHTML = `🎉 You guessed the right number ${guess}! You win the game!`;
+          endGame();
+        } else if (guess < randomNum) {
+          result.innerHTML = "📉 Your guess is too low!";
+        } else {
+          result.innerHTML = "📈 Your guess is too high!";
+        }
+
+        updateGameStatus();
+      };
+
+      const updateGameStatus = () => {
+        previous.innerHTML = `Previous Guesses: ${previousGuesses.join(", ")}`;
+        remaining.innerHTML = `Remaining Attempts: ${attemptsLeft}`;
+
+        if (attemptsLeft === 0 && playGame) {
+          result.innerHTML = `💥 You've run out of attempts! The correct number was ${randomNum}.`;
+          endGame();
+        }
+      };
+
+      const endGame = () => {
+        playGame = false;
+        userNum.disabled = true;
+        form.querySelector("button").disabled = true;
+        showRestartButton();
+      };
+
+      const showRestartButton = () => {
+        result.innerHTML += `<br><button class="restart-btn" id="restart">Restart Game</button>`;
+        document.getElementById("restart").addEventListener("click", () => {
+          location.reload(); // Reloads the page to start a new game
+        });
+      };
+    </script>
+  </body>
+</html>

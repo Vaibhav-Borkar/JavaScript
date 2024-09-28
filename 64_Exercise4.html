@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Red Divs</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0; /* Remove default margin */
+        background-color: #f0f0f0; /* Optional: Add a background color for better visibility */
+      }
+      .red-div {
+        width: 80vw; /* Width relative to viewport width */
+        max-width: 300px; /* Maximum width */
+        height: 20vh; /* Height relative to viewport height */
+        background-color: rgb(17, 139, 146);
+        margin: 10px; /* Margin around the divs */
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column; /* Stack label and time vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        color: white; /* Text color */
+        box-sizing: border-box; /* Ensure padding is included in the width and height */
+        padding: 10px; /* Add some padding inside the div */
+      }
+      .label {
+        font-size: 20px; /* Font size for labels */
+        margin-bottom: 5px; /* Space between label and time */
+        text-transform: uppercase; /* Uppercase labels */
+        color: red;
+      }
+      .time {
+        font-size: 10vw; /* Font size for time, relative to viewport width */
+        padding-bottom: 10px;
+      }
+      /* Media query for small screens */
+      @media (max-width: 600px) {
+        .red-div {
+          width: 90vw;
+          font-size: 12vw; /* Adjust font size for smaller screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1" class="red-div">
+      <div class="label">Hours</div>
+      <div class="time" id="time1"></div>
+    </div>
+    <div id="div2" class="red-div">
+      <div class="label">Minutes</div>
+      <div class="time" id="time2"></div>
+    </div>
+    <div id="div3" class="red-div">
+      <div class="label">Seconds</div>
+      <div class="time" id="time3"></div>
+    </div>
+    <!-- <audio
+      id="tickSound"
+      src="/Clock-sound-tick-tock.mp3"
+      preload="auto"
+    ></audio> -->
+
+    <script>
+      //   const tickSound = document.getElementById("tickSound");
+
+      //   function playSound() {
+      //     tickSound.play();
+      //   }
+
+      function playSound(src) {
+        let audio = new Audio(src);
+        audio.play().catch((error) => {
+          console.error("Error playing sound:", error);
+        });
+      }
+
+      setInterval(() => {
+        let time = new Date();
+        let hours = document.getElementById("time1");
+        hours.innerHTML = time.getHours().toString().padStart(2, "0"); // Add leading zero
+        let minutes = document.getElementById("time2");
+        minutes.innerHTML = time.getMinutes().toString().padStart(2, "0"); // Add leading zero
+        let seconds = document.getElementById("time3");
+        seconds.innerHTML = time.getSeconds().toString().padStart(2, "0"); // Add leading zero
+        playSound("/Clock-sound-tick-tock.mp3");
+      }, 1000);
+    </script>
+  </body>
+</html>
